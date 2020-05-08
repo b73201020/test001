@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>顏色列表</h2>
+        <ul>
+            <li v-for="color in colors">
+                {{color}}
+            </li>
+        </ul>
+
+        <table border="1">
+            <tr>
+                <td v-for="color in colors">{{color}}</td>
+            </tr>
+        </table>
+
+
+
+
+        <h2>各家庭的父親</h2>
+        <ul>
+            <li v-for="home in homes" v-on:click="myFa(home.father, home.mother)">
+                {{home.father}}, {{home.mother}}
+            </li>
+        </ul>
+
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                colors: ['blue', 'red', 'black'],
+                homes: [
+                    { father: 'tom', mother:'mary' },
+                    { father: 'bob', mother:'joe' },
+                    { father: 'john',mother:'annie' }
+                ]
+
+            },
+            methods: {
+                myFa: function (father, mother) {
+                    alert('我的爸爸是' + father+ "\n"+
+                    '我的媽媽是' + mother
+                    );
+
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

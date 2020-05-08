@@ -1,0 +1,37 @@
+<html>
+<body>
+
+<div id="app">    
+    <div class="hi">{{message}}</div>
+    <h2>你考幾分呢？</h2>
+    國文：<input type="number" v-model="score1">
+    數學：<input type="number" v-model="score2">
+    <div v-if="score1>=60">國文及格！</div>
+    <div v-else="">國文不及格！</div>
+
+    <div v-if="score2>=60">數學及格！</div>
+    <div v-else="">數學不及格！</div>
+
+    <div v-if="score1+score2-120>=0">平均及格！</div>
+    <div v-else="">平均不及格！</div>
+
+
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+
+<script>
+var app = new Vue({
+        el:'#app',
+        data:{
+            message: 'You loaded this page on ' + new Date().toLocaleString(),
+            score1:0,
+            score2:0,
+            loading:false
+        }
+    })
+</script>
+    
+
+</body>
+</html>
