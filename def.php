@@ -13,6 +13,7 @@
         echo $i."<br>";
 
     echo "test";    
+    echo "test2";
 ?>
 </body>
 </html>
